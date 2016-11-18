@@ -1,4 +1,4 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
 import com.workshop.eems.util.DatePattern;
 import com.workshop.eems.util.DateTimeUtils;

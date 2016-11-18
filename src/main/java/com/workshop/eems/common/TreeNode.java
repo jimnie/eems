@@ -1,4 +1,4 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
 /**
  * Created by Wayne on 2015/7/8.

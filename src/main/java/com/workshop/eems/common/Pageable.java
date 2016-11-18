@@ -1,6 +1,5 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
-import com.workshop.eems.Order.Direction;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -28,7 +27,7 @@ public class Pageable implements Serializable {
 
     private String orderProperty;
 
-    private Direction orderDirection;
+    private Order.Direction orderDirection;
 
     private List<Filter> filters = new ArrayList<Filter>();
 
@@ -92,11 +91,11 @@ public class Pageable implements Serializable {
         this.orderProperty = orderProperty;
     }
 
-    public Direction getOrderDirection() {
+    public Order.Direction getOrderDirection() {
         return orderDirection;
     }
 
-    public void setOrderDirection(Direction orderDirection) {
+    public void setOrderDirection(Order.Direction orderDirection) {
         this.orderDirection = orderDirection;
     }
 

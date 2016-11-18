@@ -1,4 +1,4 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;

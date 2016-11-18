@@ -1,5 +1,9 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
+import com.workshop.eems.common.CommonAttributes;
+import com.workshop.eems.common.Principal;
+import com.workshop.eems.common.Setting;
+import com.workshop.eems.common.UserLoginToken;
 import com.workshop.eems.entity.Group;
 import com.workshop.eems.entity.Resources;
 import com.workshop.eems.entity.Role;

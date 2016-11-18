@@ -1,4 +1,4 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
 import net.sf.json.JsonConfig;
 import net.sf.json.processors.JsonValueProcessor;

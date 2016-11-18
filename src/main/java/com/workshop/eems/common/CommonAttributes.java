@@ -1,4 +1,4 @@
-package com.workshop.eems;
+package com.workshop.eems.common;
 
 import org.apache.commons.codec.binary.Base64;
 
