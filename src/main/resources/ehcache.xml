@@ -125,34 +125,7 @@
            timeToLiveSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
 
-    <cache name="member"
-           eternal="false"
-           maxElementsInMemory="100"
-           overflowToDisk="false"
-           diskPersistent="false"
-           timeToIdleSeconds="0"
-           timeToLiveSeconds="300"
-           memoryStoreEvictionPolicy="LRU"/>
-
-    <cache name="memberRank"
-           eternal="false"
-           maxElementsInMemory="100"
-           overflowToDisk="false"
-           diskPersistent="false"
-           timeToIdleSeconds="0"
-           timeToLiveSeconds="300"
-           memoryStoreEvictionPolicy="LRU"/>
-
-    <cache name="theme"
-           eternal="false"
-           maxElementsInMemory="100"
-           overflowToDisk="false"
-           diskPersistent="false"
-           timeToIdleSeconds="0"
-           timeToLiveSeconds="300"
-           memoryStoreEvictionPolicy="LRU"/>
-
-    <cache name="themeCategory"
+    <cache name="employee"
            eternal="false"
            maxElementsInMemory="100"
            overflowToDisk="false"
