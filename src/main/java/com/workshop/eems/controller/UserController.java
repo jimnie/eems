@@ -1,7 +1,6 @@
 package com.workshop.eems.controller;
 
-import com.educonsulting.mms.*;
-import com.workshop.eems.*;
+import com.workshop.eems.common.*;
 import com.workshop.eems.entity.User;
 import com.workshop.eems.service.RoleService;
 import com.workshop.eems.service.UserService;

@@ -1,9 +1,9 @@
 package com.workshop.eems.service;
 
-import com.workshop.eems.Filter;
-import com.workshop.eems.Order;
-import com.workshop.eems.Page;
-import com.workshop.eems.Pageable;
+import com.workshop.eems.common.Filter;
+import com.workshop.eems.common.Order;
+import com.workshop.eems.common.Page;
+import com.workshop.eems.common.Pageable;
 
 import java.io.Serializable;
 import java.util.List;

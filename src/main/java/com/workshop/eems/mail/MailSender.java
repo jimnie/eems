@@ -1,6 +1,6 @@
 package com.workshop.eems.mail;
 
-import com.workshop.eems.Mail;
+import com.workshop.eems.common.Mail;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

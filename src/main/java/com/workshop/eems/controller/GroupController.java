@@ -1,8 +1,8 @@
 package com.workshop.eems.controller;
 
-import com.workshop.eems.Message;
-import com.workshop.eems.Page;
-import com.workshop.eems.Pageable;
+import com.workshop.eems.common.Message;
+import com.workshop.eems.common.Page;
+import com.workshop.eems.common.Pageable;
 import com.workshop.eems.entity.Group;
 import com.workshop.eems.entity.Role;
 import com.workshop.eems.entity.User;

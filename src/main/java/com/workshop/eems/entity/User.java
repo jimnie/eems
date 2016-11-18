@@ -1,8 +1,8 @@
 package com.workshop.eems.entity;
 
-import com.workshop.eems.interceptor.UserInterceptor;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.workshop.eems.interceptor.UserInterceptor;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "mms_sys_user")
+@Table(name = "eems_sys_user")
 public class User extends BaseEntity {
 
     private static final long serialVersionUID = -7519486823153844426L;

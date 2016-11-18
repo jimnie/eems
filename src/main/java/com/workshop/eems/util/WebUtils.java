@@ -1,6 +1,6 @@
 package com.workshop.eems.util;
 
-import com.workshop.eems.Setting;
+import com.workshop.eems.common.Setting;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.util.Assert;
 

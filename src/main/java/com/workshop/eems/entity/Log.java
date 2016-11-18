@@ -6,7 +6,7 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "mms_sys_log")
+@Table(name = "eems_sys_log")
 public class Log extends BaseEntity {
 
     private static final long serialVersionUID = -4494144902110236826L;

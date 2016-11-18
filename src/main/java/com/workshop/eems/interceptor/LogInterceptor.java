@@ -1,6 +1,6 @@
 package com.workshop.eems.interceptor;
 
-import com.workshop.eems.LogConfig;
+import com.workshop.eems.common.LogConfig;
 import com.workshop.eems.entity.Log;
 import com.workshop.eems.service.LogConfigService;
 import com.workshop.eems.service.LogService;

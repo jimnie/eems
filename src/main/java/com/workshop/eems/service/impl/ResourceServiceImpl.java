@@ -1,7 +1,6 @@
 package com.workshop.eems.service.impl;
 
-import com.educonsulting.mms.*;
-import com.workshop.eems.*;
+import com.workshop.eems.common.*;
 import com.workshop.eems.dao.ResourceDao;
 import com.workshop.eems.entity.Resources;
 import com.workshop.eems.service.ResourceService;

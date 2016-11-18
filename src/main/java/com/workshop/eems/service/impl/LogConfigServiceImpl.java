@@ -1,7 +1,7 @@
 package com.workshop.eems.service.impl;
 
-import com.workshop.eems.CommonAttributes;
-import com.workshop.eems.LogConfig;
+import com.workshop.eems.common.CommonAttributes;
+import com.workshop.eems.common.LogConfig;
 import com.workshop.eems.service.LogConfigService;
 import org.dom4j.Document;
 import org.dom4j.io.SAXReader;

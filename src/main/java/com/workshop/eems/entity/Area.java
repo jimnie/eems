@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "mms_sys_area")
+@Table(name = "eems_sys_area")
 @SequenceGenerator(name = "sequenceGenerator", sequenceName = "sys_area_sequence")
 public class Area extends OrderEntity {
 

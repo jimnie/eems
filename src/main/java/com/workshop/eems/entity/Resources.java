@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Wayne on 2015/7/3.
  */
 @Entity
-@Table(name = "mms_sys_resources")
+@Table(name = "eems_sys_resources")
 public class Resources extends BaseEntity implements Comparable {
 
     private static final long serialVersionUID = 6195728082421094333L;

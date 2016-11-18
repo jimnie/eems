@@ -1,6 +1,6 @@
 package com.workshop.eems.filter;
 
-import com.workshop.eems.UserLoginToken;
+import com.workshop.eems.common.UserLoginToken;
 import com.workshop.eems.service.RSAService;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.session.Session;

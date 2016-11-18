@@ -1,6 +1,6 @@
 package com.workshop.eems.service.impl;
 
-import com.workshop.eems.Principal;
+import com.workshop.eems.common.Principal;
 import com.workshop.eems.dao.UserDao;
 import com.workshop.eems.entity.*;
 import com.workshop.eems.service.UserService;

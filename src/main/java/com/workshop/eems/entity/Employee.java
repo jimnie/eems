@@ -1,21 +1,17 @@
 package com.workshop.eems.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Wayne on 2016/3/3.
  */
 @Entity
-@Table(name = "mms_inf_member")
-public class Member extends BaseEntity {
+@Table(name = "eems_biz_employee")
+public class Employee extends BaseEntity {
 
     private static final long serialVersionUID = 5621491392638387378L;
     // 积分
@@ -79,8 +75,6 @@ public class Member extends BaseEntity {
 
     private String thirdKidSex;
 
-    private MemberRank memberRank;
-
     private String state;
 
     private String city;
@@ -88,32 +82,6 @@ public class Member extends BaseEntity {
     private String district;
 
     private String street;
-
-    private Set<ThemeCategory> categories = new HashSet<>();
-
-    private Set<Theme> themes = new HashSet<>();
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "mms_inf_member_category",
-            joinColumns = {@JoinColumn(name = "m_id")},
-            inverseJoinColumns = {@JoinColumn(name = "c_id")})
-    public Set<ThemeCategory> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(Set<ThemeCategory> categories) {
-        this.categories = categories;
-    }
-
-    @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "members")
-    public Set<Theme> getThemes() {
-        return themes;
-    }
-
-    public void setThemes(Set<Theme> themes) {
-        this.themes = themes;
-    }
 
     @NotNull
     @Column(nullable = false, length = 50)
@@ -361,16 +329,6 @@ public class Member extends BaseEntity {
         this.registerDate = registerDate;
     }
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false)
-    public MemberRank getMemberRank() {
-        return memberRank;
-    }
-
-    public void setMemberRank(MemberRank memberRank) {
-        this.memberRank = memberRank;
-    }
 
     @NotNull
     @Column(nullable = false, length = 20)

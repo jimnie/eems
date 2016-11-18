@@ -1,9 +1,9 @@
 package com.workshop.eems.controller;
 
-import com.workshop.eems.Filter;
-import com.workshop.eems.Message;
-import com.workshop.eems.Page;
-import com.workshop.eems.Pageable;
+import com.workshop.eems.common.Filter;
+import com.workshop.eems.common.Message;
+import com.workshop.eems.common.Page;
+import com.workshop.eems.common.Pageable;
 import com.workshop.eems.entity.Act;
 import com.workshop.eems.service.ActService;
 import net.sf.json.JSONArray;

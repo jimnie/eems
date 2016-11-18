@@ -1,6 +1,6 @@
 package com.workshop.eems.service.impl;
 
-import com.workshop.eems.Message;
+import com.workshop.eems.common.Message;
 import com.workshop.eems.service.MessageService;
 import org.springframework.stereotype.Service;
 

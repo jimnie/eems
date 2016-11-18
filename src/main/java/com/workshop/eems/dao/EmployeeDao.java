@@ -1,11 +1,11 @@
 package com.workshop.eems.dao;
 
-import com.workshop.eems.entity.Member;
+import com.workshop.eems.entity.Employee;
 
 /**
  * Created by Wayne on 2016/3/7.
  */
-public interface MemberDao extends BaseDao<Member, Long> {
+public interface EmployeeDao extends BaseDao<Employee, Long> {
 
     boolean isCardNoAssigned(String cardNo);
 

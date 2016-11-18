@@ -1,9 +1,9 @@
 package com.workshop.eems.dao;
 
-import com.workshop.eems.Filter;
-import com.workshop.eems.Order;
-import com.workshop.eems.Page;
-import com.workshop.eems.Pageable;
+import com.workshop.eems.common.Filter;
+import com.workshop.eems.common.Order;
+import com.workshop.eems.common.Page;
+import com.workshop.eems.common.Pageable;
 
 import javax.persistence.LockModeType;
 import java.io.Serializable;

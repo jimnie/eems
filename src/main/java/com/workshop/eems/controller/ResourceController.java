@@ -1,8 +1,8 @@
 package com.workshop.eems.controller;
 
-import com.workshop.eems.CommonAttributes;
-import com.workshop.eems.JsonDateValueProcessor;
-import com.workshop.eems.Message;
+import com.workshop.eems.common.CommonAttributes;
+import com.workshop.eems.common.JsonDateValueProcessor;
+import com.workshop.eems.common.Message;
 import com.workshop.eems.entity.Resources;
 import com.workshop.eems.service.ResourceService;
 import com.workshop.eems.util.DatePattern;

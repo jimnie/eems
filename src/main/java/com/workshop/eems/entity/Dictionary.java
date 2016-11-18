@@ -7,7 +7,7 @@ import javax.persistence.Table;
  * Created by Wayne on 2015/6/19.
  */
 @Entity
-@Table(name = "mms_sys_dict")
+@Table(name = "eems_sys_dict")
 public class Dictionary extends BaseEntity {
 
     private static final long serialVersionUID = -2618018379547060997L;

@@ -1,6 +1,6 @@
 package com.workshop.eems.service;
 
-import com.workshop.eems.LogConfig;
+import com.workshop.eems.common.LogConfig;
 
 import java.util.List;
 

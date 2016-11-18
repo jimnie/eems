@@ -8,7 +8,7 @@ import javax.persistence.Table;
  * Created by Wayne on 2015/6/19.
  */
 @Entity
-@Table(name = "mms_sys_act")
+@Table(name = "eems_sys_act")
 public class Act extends BaseEntity {
 
     private static final long serialVersionUID = -3756910004771661894L;

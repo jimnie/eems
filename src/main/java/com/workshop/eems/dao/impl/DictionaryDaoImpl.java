@@ -1,7 +1,7 @@
 package com.workshop.eems.dao.impl;
 
-import com.workshop.eems.Filter;
-import com.workshop.eems.Order;
+import com.workshop.eems.common.Filter;
+import com.workshop.eems.common.Order;
 import com.workshop.eems.dao.DictionaryDao;
 import com.workshop.eems.entity.Dictionary;
 import org.apache.commons.lang.StringUtils;

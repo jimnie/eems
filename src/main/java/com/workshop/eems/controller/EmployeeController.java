@@ -1,11 +1,9 @@
 package com.workshop.eems.controller;
 
-import com.educonsulting.mms.*;
-import com.workshop.eems.*;
-import com.workshop.eems.entity.Member;
-import com.workshop.eems.entity.RechargeLog;
-import com.workshop.eems.entity.ThemeCategory;
-import com.workshop.eems.service.*;
+import com.workshop.eems.common.*;
+import com.workshop.eems.entity.Employee;
+import com.workshop.eems.service.EmployeeService;
+import com.workshop.eems.service.UserService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,30 +14,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Wayne on 2016/3/7.
  */
 @Controller
-@RequestMapping("/member")
-public class MemberController extends BaseController {
+@RequestMapping("/employee")
+public class EmployeeController extends BaseController {
 
-    @Resource(name = "memberServiceImpl")
-    private MemberService memberService;
-
-    @Resource(name = "memberRankServiceImpl")
-    private MemberRankService memberRankService;
+    @Resource(name = "employeeServiceImpl")
+    private EmployeeService employeeService;
 
     @Resource(name = "userServiceImpl")
     private UserService userService;
-
-    @Resource(name = "themeCategoryServiceImpl")
-    private ThemeCategoryService themeCategoryService;
-
-    @Resource(name = "rechargeLogServiceImpl")
-    private RechargeLogService rechargeLogService;
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
@@ -54,9 +42,8 @@ public class MemberController extends BaseController {
                        @RequestParam(value = "order", required = false) String order,
                        @RequestParam(value = "cardNo", required = false) String cardNo,
                        @RequestParam(value = "kidName", required = false) String kidName,
-                       @RequestParam(value = "mobile", required = false) String mobile,
-                       @RequestParam(value = "memberRankId", required = false) String
-                               memberRankId) {
+                       @RequestParam(value = "mobile", required = false) String mobile
+    ) {
         Pageable pageable = getPageable(rows, page, sort, order);
         List<Filter> filters = new ArrayList<Filter>();
         if (StringUtils.isNotEmpty(cardNo)) {
@@ -68,51 +55,39 @@ public class MemberController extends BaseController {
         if (StringUtils.isNotEmpty(mobile)) {
             filters.add(Filter.eq("mobile", mobile));
         }
-        if (StringUtils.isNotEmpty(memberRankId)) {
-            filters.add(Filter.eq("memberRank", memberRankService.find(Long.valueOf(memberRankId)
-            )));
-        }
         pageable.setFilters(filters);
-        Page<Member> memberPage = memberService.findPage(pageable);
+        Page<Employee> memberPage = employeeService.findPage(pageable);
         return getPageResultMap(memberPage);
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
-    public Message save(Member member, @RequestParam(value = "activities") String str) {
-        if (memberService.isCartNoAssigned(member.getCardNo())) {
+    public Message save(Employee member, @RequestParam(value = "activities") String str) {
+        if (employeeService.isCartNoAssigned(member.getCardNo())) {
             return Message.error("member.form.cardNoIsExist");
         }
-        if (memberService.isMobileExisted(member.getMobile())) {
+        if (employeeService.isMobileExisted(member.getMobile())) {
             return Message.error("member.form.mobileExist");
         }
         String[] ids = str.split(",");
-        for (String id : ids) {
-            ThemeCategory themeCategory = themeCategoryService.find(Long.valueOf(id));
-            member.getCategories().add(themeCategory);
-        }
         member.setPoint(CommonAttributes.DEFAULT_MEMBER_POINT);
         member.setBalance(BigDecimal.ZERO);
         member.setAmount(BigDecimal.ZERO);
-        memberService.save(member);
+        employeeService.save(member);
         return SUCCESS_MESSAGE;
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
-    public Message update(Member member, @RequestParam(value = "activities") String str) {
-        if (memberService.isCartNoAssigned(member.getCardNo())) {
+    public Message update(Employee member, @RequestParam(value = "activities") String str) {
+        if (employeeService.isCartNoAssigned(member.getCardNo())) {
             return Message.error("member.form.cardNoIsExist");
         }
-        if (memberService.isMobileExisted(member.getMobile())) {
+        if (employeeService.isMobileExisted(member.getMobile())) {
             return Message.error("member.form.mobileExist");
         }
         String[] ids = str.split(",");
-        for (String id : ids) {
-            ThemeCategory themeCategory = themeCategoryService.find(Long.valueOf(id));
-            member.getCategories().add(themeCategory);
-        }
-        memberService.update(member, "cartNo", "amount", "balance", "point", "registerDate");
+        employeeService.update(member, "cartNo", "amount", "balance", "point", "registerDate");
         return SUCCESS_MESSAGE;
     }
 
@@ -124,7 +99,7 @@ public class MemberController extends BaseController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public Message delete(@RequestParam(value = "memberId") String id) {
-        memberService.delete(Long.valueOf(id));
+        employeeService.delete(Long.valueOf(id));
         return SUCCESS_MESSAGE;
     }
 
@@ -132,24 +107,13 @@ public class MemberController extends BaseController {
     @ResponseBody
     public Message recharge(@RequestParam(value = "c_id") String id,
                             @RequestParam(value = "rechargeAmount") String amount) {
-        Member member = memberService.find(Long.valueOf(id));
+        Employee member = employeeService.find(Long.valueOf(id));
         member.setRechargeAmount(BigDecimal.valueOf(Double.valueOf(amount)));
         member.setAmount(member.getAmount().add(member.getRechargeAmount()));
         member.setBalance(member.getBalance().add(member.getRechargeAmount()));
         member.setPoint(member.getPoint() + member.getRechargeAmount().longValue());
 
-        RechargeLog rechargeLog = new RechargeLog();
-        rechargeLog.setMemberid(member.getId());
-        rechargeLog.setCardNo(member.getCardNo());
-        rechargeLog.setMobile(member.getMobile());
-        rechargeLog.setName(member.getCnName());
-        rechargeLog.setOperator(userService.getCurrent().getUsername());
-        rechargeLog.setType(RechargeLog.Type.recharge);
-        rechargeLog.setAmount(member.getRechargeAmount());
-        rechargeLog.setCreateDate(new Date(System.currentTimeMillis()));
-
-        rechargeLogService.save(rechargeLog);
-        memberService.update(member);
+        employeeService.update(member);
         return SUCCESS_MESSAGE;
     }
 
@@ -158,25 +122,13 @@ public class MemberController extends BaseController {
     public Message unrecharge(@RequestParam(value = "b_id") String id,
                               @RequestParam(value = "unrechargeAmount") String amount,
                               @RequestParam(value = "cause") String cause) {
-        Member member = memberService.find(Long.valueOf(id));
+        Employee member = employeeService.find(Long.valueOf(id));
         member.setRechargeAmount(BigDecimal.valueOf(Double.valueOf(amount)).negate());
         member.setAmount(member.getAmount().add(member.getRechargeAmount()));
         member.setBalance(member.getBalance().add(member.getRechargeAmount()));
         member.setPoint(member.getPoint() + member.getRechargeAmount().longValue());
 
-        RechargeLog rechargeLog = new RechargeLog();
-        rechargeLog.setMemberid(member.getId());
-        rechargeLog.setCardNo(member.getCardNo());
-        rechargeLog.setMobile(member.getMobile());
-        rechargeLog.setName(member.getCnName());
-        rechargeLog.setOperator(userService.getCurrent().getUsername());
-        rechargeLog.setType(RechargeLog.Type.hedging);
-        rechargeLog.setMemo(cause);
-        rechargeLog.setAmount(member.getRechargeAmount());
-        rechargeLog.setCreateDate(new Date(System.currentTimeMillis()));
-
-        rechargeLogService.save(rechargeLog);
-        memberService.update(member);
+        employeeService.update(member);
         return SUCCESS_MESSAGE;
     }
 }

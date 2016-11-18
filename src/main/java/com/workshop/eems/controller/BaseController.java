@@ -1,7 +1,6 @@
 package com.workshop.eems.controller;
 
-import com.educonsulting.mms.*;
-import com.workshop.eems.*;
+import com.workshop.eems.common.*;
 import com.workshop.eems.entity.Log;
 import com.workshop.eems.util.SettingUtils;
 import com.workshop.eems.util.SpringUtils;

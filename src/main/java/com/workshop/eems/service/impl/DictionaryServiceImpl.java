@@ -1,7 +1,7 @@
 package com.workshop.eems.service.impl;
 
-import com.workshop.eems.Page;
-import com.workshop.eems.Pageable;
+import com.workshop.eems.common.Page;
+import com.workshop.eems.common.Pageable;
 import com.workshop.eems.dao.DictionaryDao;
 import com.workshop.eems.entity.Dictionary;
 import com.workshop.eems.service.DictionaryService;

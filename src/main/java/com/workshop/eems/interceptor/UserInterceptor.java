@@ -1,6 +1,6 @@
 package com.workshop.eems.interceptor;
 
-import com.workshop.eems.Principal;
+import com.workshop.eems.common.Principal;
 import com.workshop.eems.entity.User;
 import com.workshop.eems.service.UserService;
 import org.apache.commons.lang.StringUtils;

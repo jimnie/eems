@@ -1,4 +1,4 @@
-package com.workshop.eems;
+package com.workshop.eems.util;
 
 import org.apache.commons.beanutils.converters.AbstractConverter;
 

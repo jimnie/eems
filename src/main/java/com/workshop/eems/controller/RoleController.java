@@ -1,13 +1,12 @@
 package com.workshop.eems.controller;
 
-import com.educonsulting.mms.*;
+import com.workshop.eems.common.*;
 import com.workshop.eems.entity.Authority;
 import com.workshop.eems.entity.Resources;
 import com.workshop.eems.entity.Role;
 import com.workshop.eems.service.AuthorityService;
 import com.workshop.eems.service.ResourceService;
 import com.workshop.eems.service.RoleService;
-import com.workshop.eems.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.collections.CollectionUtils;

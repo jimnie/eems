@@ -1,9 +1,9 @@
 package com.workshop.eems.service.impl;
 
-import com.workshop.eems.BranchNode;
-import com.workshop.eems.Page;
-import com.workshop.eems.Pageable;
-import com.workshop.eems.TreeNode;
+import com.workshop.eems.common.BranchNode;
+import com.workshop.eems.common.Page;
+import com.workshop.eems.common.Pageable;
+import com.workshop.eems.common.TreeNode;
 import com.workshop.eems.dao.GroupDao;
 import com.workshop.eems.entity.Group;
 import com.workshop.eems.service.GroupService;

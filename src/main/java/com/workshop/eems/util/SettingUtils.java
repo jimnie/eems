@@ -1,8 +1,7 @@
 package com.workshop.eems.util;
 
-import com.workshop.eems.CommonAttributes;
-import com.workshop.eems.EnumConverter;
-import com.workshop.eems.Setting;
+import com.workshop.eems.common.CommonAttributes;
+import com.workshop.eems.common.Setting;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Ehcache;
 import org.apache.commons.beanutils.BeanUtilsBean;

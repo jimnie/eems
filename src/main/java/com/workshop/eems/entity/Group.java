@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Wayne on 2015/6/25.
  */
 @Entity
-@Table(name = "mms_sys_group")
+@Table(name = "eems_sys_group")
 public class Group extends BaseEntity {
 
     private static final long serialVersionUID = 6808015537361255477L;

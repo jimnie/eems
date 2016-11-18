@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "mms_sys_role")
+@Table(name = "eems_sys_role")
 public class Role extends BaseEntity {
 
     private static final long serialVersionUID = -6614052029623997372L;

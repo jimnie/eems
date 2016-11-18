@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Wayne on 2015/7/3.
  */
 @Entity
-@Table(name = "mms_sys_authority")
+@Table(name = "eems_sys_authority")
 public class Authority extends BaseEntity {
 
     private static final long serialVersionUID = -7266418510327333601L;
